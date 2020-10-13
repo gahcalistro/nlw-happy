@@ -1,0 +1,17 @@
+/* Animation */
+@keyframes up {
+    from {
+        opacity: 0;
+        transform: translateY(16px); /* Positivo para baixo. Negativo para cima. */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animateUp {
+    animation-name: up;
+    animation-duration: 1000ms;
+    animation-fill-mode: backwards;
+}
