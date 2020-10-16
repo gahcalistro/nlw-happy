@@ -21,7 +21,7 @@ const popup = L.popup({
     minWidth: 240,
     minHeight: 240
 }).setContent(`Lar Santa Luzia 
-    <a href="orphanage.html" class="choose-orphanage"/> 
+    <a href="orphanage.html?id=1" class="choose-orphanage"/> 
     <img src="./public/images/arrow-white.svg">`)
 
 // Create and Add Marker
