@@ -1,5 +1,5 @@
 // Create Map
-const map = L.map('mapid').setView([-21.4608322,-49.9510259], 15);
+const map = L.map('mapid').setView([-27.222633,-49.6455874], 15);
 
 // Create and Add TileLayer
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -8,23 +8,37 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 // Create and Add Icon
 const icon = L.icon({
-    iconUrl:"./public/images/map-marker.svg",
+    iconUrl:"/images/map-marker.svg",
     iconSize: [58,68],
     iconAnchor: [29,68],
     popupAnchor: [170, 2]
 })
 
-// Create Popup Overlay
-const popup = L.popup({
-    closeButton: false,
-    className: 'map-popup',
-    minWidth: 240,
-    minHeight: 240
-}).setContent(`Lar Santa Luzia 
-    <a href="orphanage.html?id=1" class="choose-orphanage"/> 
-    <img src="./public/images/arrow-white.svg">`)
+function addMarker({id, name, lat, lng}) {
+    // Create Popup Overlay
+    const popup = L.popup({
+        closeButton: false,
+        className: 'map-popup',
+        minWidth: 240,
+        minHeight: 240
+    }).setContent(`${name} 
+        <a href="orphanage?id=${id}" class="choose-orphanage"/> 
+        <img src="/images/arrow-white.svg">`)
 
-// Create and Add Marker
-L.marker([-21.4608322,-49.9510259], { icon: icon })
-    .addTo(map)
-    .bindPopup(popup)
+    // Create and Add Marker
+    L.marker([lat,lng], { icon: icon })
+        .addTo(map)
+        .bindPopup(popup)
+}
+
+const orphanagesSpan = document.querySelectorAll('.orphanages span');
+
+orphanagesSpan.forEach( span => {
+    const orphanage = {
+        id: span.dataset.id,
+        name: span.dataset.name,
+        lat: span.dataset.lat,
+        lng: span.dataset.lng
+    }
+    addMarker(orphanage)
+})

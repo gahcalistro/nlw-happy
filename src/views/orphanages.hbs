@@ -4,7 +4,7 @@
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>Localize uma instituição | Happy</title>
-        <link rel="icon" href="./public/images/logo-icon.png"/>
+        <link rel="icon" href="/images/logo-icon.png"/>
         <!--Leaflet-->
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
         integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
@@ -15,33 +15,45 @@
         crossorigin=""></script>
         <!--Font|CSS Pages-->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet"/>
-        <link rel="stylesheet" href="./public/css/styles.css"/>
-        <link rel="stylesheet" href="./public/css/animation.css"/>
-        <link rel="stylesheet" href="./public/css/page-orphanages.css"/>
+        <link rel="stylesheet" href="/css/styles.css"/>
+        <link rel="stylesheet" href="/css/animation.css"/>
+        <link rel="stylesheet" href="/css/page-orphanages.css"/>
     </head>
     <body>
 
         <div id="page-orphanages">
             <aside class="animateRight">
                 <header>
-                    <img src="./public/images/map-marker.svg" alt="Logomarca de Happy">
+                    <img src="/images/map-marker.svg" alt="Logomarca de Happy">
                     <h2>Escolha uma instituição no mapa</h2>
                     <p>Muitas crianças estão esperando sua visita :)</p>
                 </header>
 
                 <footer>
-                    <strong>Avanhandava</strong>
-                    <p>São Paulo</p>
+                    <strong>Rio do Sul</strong>
+                    <p>Santa Catarina</p>
                 </footer>
             </aside>
 
-            <div id="mapid" class="animateAppear">
-                <a href="create-orphanage.html" class="create-orphanage" title="Cadastre um orfanato">
-                    <img src="./public/images/plus.svg" alt="Criar orfanato">
-                </a>
+            <div id="mapid" class="animateAppear"></div>
+
+            <div class="orphanages">
+                {{#each orphanages}}
+                    <span hidden 
+                        data-id="{{this.id}}"
+                        data-name="{{this.name}}"
+                        data-lat="{{this.lat}}"
+                        data-lng="{{this.lng}}"
+                    ></span>
+                {{/each}}
             </div>
+
+            <a href="/create-orphanage" class="create-orphanage" title="Cadastre um orfanato">
+                <img src="/images/plus.svg" alt="Criar orfanato">
+            </a>
+
         </div>
 
-        <script src="./public/js/page-orphanages.js"></script>
+        <script src="/js/page-orphanages.js"></script>
     </body>
 </html>
