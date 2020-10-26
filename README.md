@@ -44,7 +44,7 @@ Happy is an application that connects people to institutional care homes to make
 
 ## 🔖 Layout
 <!--Layout-->
-For the project's layout, see [Figma](https://www.figma.com/file/mDEbnoojksG4w8sOxmudh3/Happy-Web?node-id=0%3A1).
+For the project's layout, see [Figma](https://www.figma.com/file/mDEbnoojksG4w8sOxmudh3/Happy-Web).
 <br/>
 It may require an account to use some features on Figma. 
 
@@ -61,7 +61,7 @@ Technologies that I used to develop this project
 <!--Getting Started-->
 ### Requirements
 
-- [Node.js](https://github.com/EliasGcf/gobarber-api)
+- [Node.js](https://nodejs.org/en/)
 - [npm](https://www.npmjs.com/) or [Yarn](https://yarnpkg.com/)
 
 **Clone the project and access the folder**
