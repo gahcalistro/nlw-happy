@@ -14,7 +14,7 @@
   
   <img alt="Repository size" src="https://img.shields.io/github/repo-size/gahcalistro/nlw-happy?style=flat-square">
   
-  <a href="https://github.com/gahcalistro/nextlevelweek/commits/master">
+  <a href="https://github.com/gahcalistro/nlw-happy/commits/main">
     <img alt="GitHub Last commit" src="https://img.shields.io/github/last-commit/gahcalistro/nlw-happy?color=orange&style=flat-square">
   </a>
 

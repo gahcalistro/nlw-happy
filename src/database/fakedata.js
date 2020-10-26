@@ -17,7 +17,7 @@ module.exports = [
         id: 2,
         lat: "-27.222633",
         lng: "-49.6555874",
-        name: "Lar das Meninos",
+        name: "Lar dos Meninos",
         about: " Presta assistência a crianças de 06 a 15 anos que se encontre em situação de risco e/ou vulnerabilidade social.",
         whatsapp: "012365478963",
         images: [

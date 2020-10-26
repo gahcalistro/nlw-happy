@@ -18,7 +18,7 @@ database.then(async db => {
     }
 
     // Insert data into the table
-    await saveOrphanage(db, data);
+    //await saveOrphanage(db, data);
 
     // Consult data from table
     const selectedOrphanages = await db.all("SELECT * FROM orphanages")

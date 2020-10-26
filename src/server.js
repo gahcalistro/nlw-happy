@@ -5,6 +5,8 @@ const pages = require('./pages')
 
 
 server
+    // Allow to use req body
+    .use(express.urlencoded({extended:true}))
     // Static Files
     .use(express.static('public'))
 
@@ -16,6 +18,7 @@ server
     .get('/orphanage', pages.orphanage)
     .get('/orphanages', pages.orphanages)
     .get('/create-orphanage', pages.createOrphanage)
+    .post('/save-orphanage', pages.saveOrphanage)
         
         // (req, res) => {
         // return res.send('Oi, eu sou o backend') 

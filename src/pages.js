@@ -1,3 +1,4 @@
+const Database = require('sqlite-async');
 const database = require('./database/db');
 const saveOrphanage = require('./database/saveOrphanage');
 
@@ -37,5 +38,35 @@ module.exports = {
     },
     createOrphanage(req, res) {
         return res.render('create-orphanage')
+    },
+    async saveOrphanage(req, res) {
+        const fields = req.body
+
+        // Verify if lat and lng are filled
+        if(Object.values(fields).includes('')) {
+            return res.send('Erro: Todos os campos devem ser preenchidos.')
+        }
+
+        try {
+            // Save Data on Database
+            const db = await database;
+            await saveOrphanage(db, {
+                lat: fields.lat,
+                lng: fields.lng,
+                name: fields.name,
+                about: fields.about,
+                whatsapp: fields.whatsapp,
+                images: fields.images.toString(), // Translate into string
+                instructions: fields.instructions,
+                opening_hours: fields.opening_hours,
+                open_on_weekends: fields.open_on_weekends,
+            })
+
+            // Redirect to Ophanages page
+            return res.redirect('/orphanages')
+        } catch (error) {
+            console.error(error)
+            return res.send('Erro no banco de dados!')
+        }
     }
 }

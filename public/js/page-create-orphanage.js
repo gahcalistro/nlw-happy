@@ -1,5 +1,5 @@
 // Create Map
-const map = L.map('mapid').setView([-21.4608322,-49.9510259], 15);
+const map = L.map('mapid').setView([-27.222633,-49.6455874], 15);
 
 // Create and Add TileLayer
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -20,7 +20,7 @@ map.on('click', (event) => {
     const lat = event.latlng.lat;
     const lng = event.latlng.lng;
 
-    document.querySelector('[name=lat').value = lat;
+    document.querySelector('[name=lat]').value = lat;
     document.querySelector('[name=lng]').value = lng;
 
     // Removing icon from map
@@ -78,4 +78,16 @@ function toggleSelect(event) {
 
     input.value = button.dataset.value;
 
+}
+
+// Verify if lat and lng are filled
+function validate(event) {
+    const lat = document.querySelector('[name=lat]').value;
+    const lng = document.querySelector('[name=lng]').value;
+    
+    if((lat == '') || (lng == '')){
+        event.preventDefault()
+        alert('Selecione um ponto no mapa.')
+    }
+    
 }
